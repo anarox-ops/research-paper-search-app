@@ -23,8 +23,15 @@ def load_embeddings():
 embedding_model = load_embeddings()
 persist_directory = "./chroma_db"
 
+import chromadb
+from langchain_chroma import Chroma
+
+# Initialize explicit persistent client to prevent Streamlit Cloud KeyError
+persist_directory = "./chroma_db"
+client = chromadb.PersistentClient(path=persist_directory)
+
 vector_store = Chroma(
-    persist_directory=persist_directory,
+    client=client,
     embedding_function=embedding_model
 )
 
