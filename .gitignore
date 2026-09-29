@@ -1,18 +1,6 @@
-# Database & Vector Store
 chroma_db/
-*.sqlite3
-
-# Environment variables
-.env
-
-# Python caches
 __pycache__/
+.env
 *.pyc
-
-# Virtual environments (if created locally)
-venv/
-.venv/
-
-# Local data / output files
 *.pdf
 output.md
